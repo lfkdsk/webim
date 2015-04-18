@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="@drawable/background"
+        tools:context=".MainActivity">
+        <ImageView
+            android:id="@+id/image_reg"
+            android:src="@drawable/logo"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TableLayout
+            android:layout_below="@id/image_reg"
+            android:id="@+id/tablelayout_reg"
+            android:layout_centerHorizontal="true"
+            android:layout_width="match_parent"
+            android:stretchColumns="1"
+            android:layout_height="wrap_content">
+            <TableRow>
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:text="Name:"
+                    />
+                <EditText
+                    android:id="@+id/login_name_reg"
+                    android:hint="Input your Name "
+                    android:maxLines="1"
+                    android:layout_height="wrap_content"
+                    />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Password:"
+                    />
+                <EditText
+                    android:id="@+id/login_password_reg"
+                    android:hint="Input your Password "
+                    android:maxLines="1"
+                    android:password="true"
+                    android:layout_height="wrap_content"
+                    />
+            </TableRow>
+        </TableLayout>
+        <CheckBox
+            android:id="@+id/show_reg"
+            android:layout_below="@id/tablelayout_reg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="显示密码"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/show_reg">
+
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/buttonclear_reg"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Clear"/>
+        <Button
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:text="Regist"
+            android:id="@+id/button_regist_reg"
+            android:layout_height="48dp" />
+    </LinearLayout>
+
+    </RelativeLayout>
+

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Just We</string>
+    <string name="friend">JustWe IM 朋友列表</string>
+    <string name="hello_world">JustWe IM </string>
+    <string name="action_stop">注销帐号</string>
+    <string name="title_activity_useractivity">useractivity</string>
+    <string name="title_activity_friend">friend</string>
+    <string name="title_activity_open_activity">Open_activity</string>
+    <string name="title_activity_author_blog">AuthorBlog</string>
+    <string name="title_activity_regist">regist</string>
+    <string name="title_activity_base">BaseActivity</string>
+</resources>

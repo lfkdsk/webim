@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffc2c6c6</color>
+    <color name="unfocused">#fffdfdfe</color>
+    <color name="pressed">#ff69c4ff</color>
+    <color name="selected">#ff387efe</color>
+    <color name="focused">#ff494eff</color>
+    <color name="actionbar_text">#ffffffff</color>
+    <color name="pink">#F59EB6</color>
+    <color name="pinkla">#ED6DA6</color>
+</resources>

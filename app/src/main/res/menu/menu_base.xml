@@ -1,0 +1,15 @@
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.lfk.webim.appli.BaseActivity"
+    >
+        <!-- 搜索, 应该作为动作按钮展示-->
+
+        <!-- 设置, 在溢出菜单中展示 -->
+        <item
+            android:id="@+id/action_settings_base"
+            android:title="@string/action_stop"
+            android:showAsAction="never"
+            tools:ignore="AppCompatResource" />
+
+</menu>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lfk.webim" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:logo="@mipmap/ic_launcher"
+            android:theme="@style/CustomActionBarTheme" >
+        </activity>
+        <activity
+            android:name=".useractivity"
+            android:label="@string/title_activity_useractivity"
+            android:launchMode="singleTask"
+            android:logo="@mipmap/ic_launcher"
+            android:parentActivityName=".friend"
+            android:theme="@style/CustomActionBarTheme" >
+
+            <!-- meta-data 用于支持 support 4.0 以及以下来指明上级活动 -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.lfk.webim.friend" />
+        </activity>
+        <activity
+            android:name=".friend"
+            android:label="@string/title_activity_friend"
+            android:launchMode="singleTask"
+            android:logo="@mipmap/ic_launcher"
+            android:theme="@style/CustomActionBarTheme" >
+        </activity>
+        <activity
+            android:name=".Open"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".server.Myserver" >
+        </service>
+
+        <activity
+            android:name=".AuthorBlog"
+            android:label="@string/title_activity_author_blog"
+            android:logo="@mipmap/ic_launcher"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/CustomActionBarTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.lfk.webim.MainActivity" />
+        </activity>
+        <activity
+            android:name=".regist"
+            android:label="@string/title_activity_regist"
+            android:logo="@mipmap/ic_launcher"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/CustomActionBarTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.lfk.webim.MainActivity" />
+        </activity>
+        <activity
+            android:name=".appli.BaseActivity"
+            android:label="@string/title_activity_base" >
+        </activity>
+    </application>
+
+</manifest>

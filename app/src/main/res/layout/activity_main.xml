@@ -1,0 +1,95 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="?android:attr/actionBarSize"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+    <ImageView
+        android:id="@+id/image"
+        android:src="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TableLayout
+        android:layout_below="@id/image"
+        android:id="@+id/tablelayout"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:stretchColumns="1"
+        android:layout_height="wrap_content">
+        <TableRow>
+            <TextView
+                android:layout_height="wrap_content"
+                android:text="Name:"
+                />
+            <EditText
+                android:id="@+id/login_name"
+                android:hint="Input your Name "
+                android:maxLines="1"
+                android:layout_height="wrap_content"
+                />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Password:"
+                />
+            <EditText
+                android:id="@+id/login_password"
+                android:hint="Input your Password "
+                android:maxLines="1"
+                android:password="true"
+                android:layout_height="wrap_content"
+                />
+        </TableRow>
+    </TableLayout>
+    <LinearLayout
+        android:id="@+id/myLineralayout"
+        android:layout_below="@id/tablelayout"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:layout_height="wrap_content">
+        <CheckBox
+            android:id="@+id/show"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="显示密码"/>
+        <CheckBox
+            android:text="保存密码"
+            android:layout_weight="1"
+            android:id="@+id/save_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <CheckBox
+            android:text="自动登录"
+            android:layout_weight="1"
+            android:id="@+id/auto_login_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <Button
+        android:layout_below="@id/myLineralayout"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/buttonlogin"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Login In"/>
+    <Button
+        android:layout_below="@id/buttonlogin"
+        android:layout_width="match_parent"
+        android:text="Regist"
+        android:id="@+id/button_regist"
+        android:layout_height="48dp" />
+    <Button
+        android:layout_below="@id/button_regist"
+        android:layout_width="match_parent"
+        android:text="Author's Blog"
+        android:id="@+id/button_intent"
+        android:layout_height="48dp" />
+</RelativeLayout>
