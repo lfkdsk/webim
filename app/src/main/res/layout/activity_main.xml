@@ -10,16 +10,32 @@
     <ImageView
         android:id="@+id/image"
         android:src="@drawable/logo"
-        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <TableLayout
-        android:layout_below="@id/image"
-        android:id="@+id/tablelayout"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="115dp"
+        android:layout_alignBottom="@+id/tablelayout"
         android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true" />
+    <TableLayout
+        android:id="@+id/tablelayout"
         android:layout_width="match_parent"
         android:stretchColumns="1"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="123dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+        <TableRow>
+            <TextView
+                android:layout_height="wrap_content"
+                android:text="Ip"/>
+            <EditText
+                android:id="@+id/login_ip"
+                android:hint="Input your Ip"
+                android:maxLines="1"
+                android:layout_height="wrap_content"
+                />
+        </TableRow>
         <TableRow>
             <TextView
                 android:layout_height="wrap_content"
@@ -45,15 +61,17 @@
                 android:layout_height="wrap_content"
                 />
         </TableRow>
+
     </TableLayout>
     <LinearLayout
         android:id="@+id/myLineralayout"
-        android:layout_below="@id/tablelayout"
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:paddingTop="4dp"
         android:paddingBottom="4dp"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tablelayout"
+        android:layout_alignParentRight="true">
         <CheckBox
             android:id="@+id/show"
             android:layout_weight="1"
@@ -74,22 +92,24 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
     <Button
-        android:layout_below="@id/myLineralayout"
-        android:layout_centerHorizontal="true"
         android:id="@+id/buttonlogin"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:text="Login In"/>
+        android:text="Login In"
+        android:layout_below="@+id/myLineralayout"
+        android:layout_alignParentRight="true" />
     <Button
-        android:layout_below="@id/buttonlogin"
         android:layout_width="match_parent"
         android:text="Regist"
         android:id="@+id/button_regist"
-        android:layout_height="48dp" />
+        android:layout_height="48dp"
+        android:layout_below="@+id/buttonlogin"
+        android:layout_alignParentRight="true" />
     <Button
-        android:layout_below="@id/button_regist"
         android:layout_width="match_parent"
         android:text="Author's Blog"
         android:id="@+id/button_intent"
-        android:layout_height="48dp" />
+        android:layout_height="48dp"
+        android:layout_below="@+id/button_regist"
+        android:layout_alignParentRight="true" />
 </RelativeLayout>

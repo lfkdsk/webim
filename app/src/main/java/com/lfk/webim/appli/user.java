@@ -16,4 +16,12 @@ public class user extends Application {
      */
     public static String FromName = "";
     public static String FromName_ = "";
+
+    //ip名称
+    public static String My_Ip = "";
+
+    public static String My_Name ="";
+    public static String MY_Text ="";
+
+    public static int Flag = 0;
 }

@@ -1,11 +1,10 @@
 package com.lfk.webim.server;
 
+import com.lfk.webim.appli.user;
+
 import org.jivesoftware.smack.ConnectionConfiguration;
 import org.jivesoftware.smack.XMPPConnection;
 
-/**
- * Created by Administrator on 2015/4/7.
- */
 public class connect {
     private static ConnectionConfiguration connConfig;
     public static XMPPConnection con;
@@ -18,7 +17,7 @@ public class connect {
     }
     public static boolean openConnection() {
         try {
-            connConfig = new ConnectionConfiguration("172.6.33.68", 5222);
+            connConfig = new ConnectionConfiguration(user.My_Ip, 5222);
             // 设置登录状态为离线
             connConfig.setSendPresence(false);
             // 断网重连

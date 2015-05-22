@@ -20,12 +20,11 @@ import com.lfk.webim.appli.user;
 import com.lfk.webim.server.ConnecMethod;
 import com.lfk.webim.server.connect;
 
-import java.lang.reflect.Field;
-
 public class MainActivity extends Activity implements View.OnClickListener {
     private String Tag = "MainAcy";
     private String account;
     private String pwd;
+    private EditText ip;
     private EditText name;
     private EditText password;
     public CheckBox check_watch;
@@ -38,21 +37,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //沉浸式状态栏
-//        Window window = getWindow();
-//        window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-//        window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION, WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-//
-//        TextView textView = new TextView(this);
-//        LinearLayout.LayoutParams lParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, getStatusBarHeight());
-//        textView.setBackgroundColor(Color.parseColor("#947954"));
-//        textView.setLayoutParams(lParams);
-//        // 获得根视图并把TextView加进去。
-//        ViewGroup view = (ViewGroup) getWindow().getDecorView();
-//        view.addView(textView);
-
         name=(EditText) findViewById(R.id.login_name);
         password = (EditText) findViewById(R.id.login_password);
+        ip = (EditText) findViewById(R.id.login_ip);
 
         check_watch=(CheckBox)findViewById(R.id.show);
         check_watch.setOnCheckedChangeListener(checkBox_Listener);
@@ -101,29 +88,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 }
         }
     };
-    // 获取手机状态栏高度
-    public int getStatusBarHeight() {
-        Class<?> c = null;
-        Object obj = null;
-        Field field = null;
-        int x = 0, statusBarHeight = 0;
-        try {
-            c = Class.forName("com.android.internal.R$dimen");
-            obj = c.newInstance();
-            field = c.getField("status_bar_height");
-            x = Integer.parseInt(field.get(obj).toString());
-            statusBarHeight = getResources().getDimensionPixelSize(x);
-        } catch (Exception e1) {
-            e1.printStackTrace();
-        }
-        return statusBarHeight;
-    }
     private void checkbox_init() {//checkbox判断函数
         //判断记住密码多选框的状态
         if(sp.getBoolean("ISCHECK", false))
         {
             //设置默认是记录密码状态
             check_save.setChecked(true);
+            ip.setText(sp.getString("USER_IP", ""));
             name.setText(sp.getString("USER_NAME",""));
             password.setText(sp.getString("PASSWORD",""));
             //判断自动登陆多选框状态
@@ -144,6 +115,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         {
             //记住用户名、密码、
             editor = sp.edit();
+            editor.putString("USER_IP", user.My_Ip);
             editor.putString("USER_NAME", account);
             editor.putString("PASSWORD",pwd);
             editor.apply();
@@ -177,6 +149,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private void accountLogin() {
         new Thread() {
             public void run() {
+                user.My_Ip = ((EditText)findViewById(R.id.login_ip))
+                        .getText().toString();
                 account = ((EditText) findViewById(R.id.login_name))
                         .getText().toString();
                 pwd = ((EditText) findViewById(R.id.login_password)).getText()
@@ -185,8 +159,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 if (is) {
                     insHandler.sendEmptyMessage(1);
                     // 将用户名保存
-                    user.UserName = account+"@172.6.33.68/Smack";
-                    user.UserName_=account;
+                    user.UserName = account+"@lfkdsk/Spark 2.6.3";
+                    user.UserName_= account;
                     setCheck_save();
                 } else {
                     insHandler.sendEmptyMessage(0);
