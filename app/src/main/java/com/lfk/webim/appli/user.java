@@ -20,8 +20,5 @@ public class user extends Application {
     //ip名称
     public static String My_Ip = "";
 
-    public static String My_Name ="";
-    public static String MY_Text ="";
 
-    public static int Flag = 0;
 }

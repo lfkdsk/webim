@@ -18,7 +18,7 @@ import com.lfk.webim.server.connect;
 
 public class regist extends Activity implements View.OnClickListener {
     private EditText name,password;
-    private String nametemp,pwdtemp;
+    //private String nametemp,pwdtemp;
     static int MSTTL=1;
     static int MSTTLS=0;
     @Override

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="?android:attr/actionBarSize"
-    android:background="@drawable/background"
+    android:background="#ff545454"
     >
     <TextView
         android:id="@+id/username"

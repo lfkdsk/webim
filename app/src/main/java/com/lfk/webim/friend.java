@@ -1,6 +1,7 @@
 package com.lfk.webim;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -18,6 +19,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lfk.webim.appli.BaseActivity;
+import com.lfk.webim.appli.SQLiteHelper;
+import com.lfk.webim.appli.TalkLogs;
 import com.lfk.webim.appli.user;
 import com.lfk.webim.server.Myserver;
 import com.lfk.webim.server.connect;
@@ -26,12 +29,15 @@ import com.lfk.webim.server.connect;
 public class friend extends BaseActivity {
     public static ArrayAdapter<String> mArrayAdapter;
     public SwipeRefreshLayout swipeLayout;
+    private SQLiteDatabase sqLiteDatabase;
+    private SQLiteHelper sqLiteHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friend);
 
-        final ClientConServer server = new ClientConServer(this,mhandler);
+        CreateNewTable();
+        final ClientConServer server = new ClientConServer(this,mhandler,this.sqLiteDatabase);
 
         swipeLayout = (SwipeRefreshLayout)findViewById(R.id.swipe_refresh);
         TextView textView=(TextView)findViewById(R.id.name);
@@ -44,8 +50,8 @@ public class friend extends BaseActivity {
         mArrayAdapter= new ArrayAdapter<String>(this, R.layout.list_item);
         listView.setAdapter(mArrayAdapter);
 
-        server.getFriends();
-        server.getChat();
+        //server.getFriends();
+        //server.getChat();
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -54,7 +60,7 @@ public class friend extends BaseActivity {
                 String temp = (String) ((TextView) arg1).getText();
                 Intent intent = new Intent();
                 String temper = temp + "@lfkdsk/Smack";
-                Log.e(temp + "=============================", temper);
+                Log.e(temp + "================", temper);
                 user.FromName = temper;
                 user.FromName_ = temp;
                 intent.putExtra("FromName", temper);
@@ -81,13 +87,23 @@ public class friend extends BaseActivity {
             }
         });
     }
+
+    public void CreateNewTable(){
+        sqLiteHelper = new SQLiteHelper(this,"user_logs.db",null,1);    //新建.db文件
+        sqLiteDatabase = sqLiteHelper.getWritableDatabase();
+        TalkLogs talklog = new TalkLogs(user.UserName_);                //获取新建表的语句
+        sqLiteDatabase.execSQL(talklog.returnAString());                //新建表
+        Toast.makeText(friend.this, user.UserName_+" Create success",Toast.LENGTH_SHORT).show();
+        Log.e(user.UserName_, "success!!!");
+        //sqLiteDatabase.close();
+        }
     public  Handler mhandler = new Handler()
     {
         public void handleMessage(android.os.Message message)
         {
             switch (message.what) {
                 case 0:
-                    Bundle bundle = (Bundle)message.obj;
+                    Bundle bundle = (Bundle)message.obj;            //桌面Toast的解决方法
                     String s1 = bundle.getString("name");
                     String s2 = bundle.getString("text");
                     showCustomToast(s1,s2);
@@ -119,7 +135,7 @@ public class friend extends BaseActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
-    public void showCustomToast(String s1, String s2) {
+    public void showCustomToast(String s1, String s2) {//新建显示TOAST
         // 通用的布局加载器
         LayoutInflater inflater = getLayoutInflater();
         // 加载根容器，方便用于后面的view的定位
@@ -134,7 +150,7 @@ public class friend extends BaseActivity {
         text.setText(s2);
         Toast tempToast = new Toast(getApplicationContext());
         // 设置位置
-        tempToast.setGravity(Gravity.BOTTOM | Gravity.RIGHT, 10, 10);
+        tempToast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER, 0, 0);
         // 设置显示时间
         tempToast.setDuration(Toast.LENGTH_SHORT);
         tempToast.setView(layout);

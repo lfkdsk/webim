@@ -5,21 +5,23 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="?android:attr/actionBarSize"
-    android:background="@drawable/background"
+    android:background="#ff545454"
     tools:context=".MainActivity">
     <ImageView
         android:id="@+id/image"
-        android:src="@drawable/logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:src="@drawable/s26908052"
+        android:layout_width="256dp"
+        android:layout_height="128dp"
         android:layout_marginBottom="115dp"
         android:layout_alignBottom="@+id/tablelayout"
+        android:background="@drawable/circle"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true" />
     <TableLayout
         android:id="@+id/tablelayout"
         android:layout_width="match_parent"
         android:stretchColumns="1"
+        android:paddingTop="32dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="123dp"
         android:layout_alignParentTop="true"
@@ -27,6 +29,7 @@
         android:layout_alignParentEnd="true">
         <TableRow>
             <TextView
+                android:textColor="#ffc2c6c6"
                 android:layout_height="wrap_content"
                 android:text="Ip"/>
             <EditText
@@ -40,6 +43,7 @@
             <TextView
                 android:layout_height="wrap_content"
                 android:text="Name:"
+                android:textColor="#ffc2c6c6"
                 />
             <EditText
                 android:id="@+id/login_name"
@@ -50,6 +54,7 @@
         </TableRow>
         <TableRow>
             <TextView
+                android:textColor="#ffc2c6c6"
                 android:layout_width="wrap_content"
                 android:text="Password:"
                 />
@@ -74,6 +79,7 @@
         android:layout_alignParentRight="true">
         <CheckBox
             android:id="@+id/show"
+            android:textColor="#ffc2c6c6"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -81,11 +87,13 @@
         <CheckBox
             android:text="保存密码"
             android:layout_weight="1"
+            android:textColor="#ffc2c6c6"
             android:id="@+id/save_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <CheckBox
             android:text="自动登录"
+            android:textColor="#ffc2c6c6"
             android:layout_weight="1"
             android:id="@+id/auto_login_in"
             android:layout_width="wrap_content"
@@ -93,23 +101,31 @@
     </LinearLayout>
     <Button
         android:id="@+id/buttonlogin"
-        android:layout_width="match_parent"
+        android:layout_width="96dp"
         android:layout_height="48dp"
         android:text="Login In"
+        android:gravity="center"
         android:layout_below="@+id/myLineralayout"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/myLineralayout"
+        android:layout_alignEnd="@+id/myLineralayout" />
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="128dp"
         android:text="Regist"
         android:id="@+id/button_regist"
         android:layout_height="48dp"
         android:layout_below="@+id/buttonlogin"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
     <Button
         android:layout_width="match_parent"
         android:text="Author's Blog"
         android:id="@+id/button_intent"
         android:layout_height="48dp"
         android:layout_below="@+id/button_regist"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

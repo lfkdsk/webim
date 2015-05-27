@@ -3,6 +3,7 @@ package com.lfk.webim.appli;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -34,11 +35,18 @@ public class BaseActivity extends Activity {
             case R.id.action_settings_base:
                 MainActivity.check_save.setChecked(false);
                 MainActivity.check_auto.setChecked(false);
-                MainActivity.editor.putString("USER_NAME", "");
+                MainActivity.editor.putString("USER_NAME","");
                 MainActivity.editor.putString("PASSWORD", "");
+                user.UserName = " ";
+                user.UserName_ = " ";
+                user.FromName_ = " ";
+                user.FromName = " ";
+                user.My_Ip = " ";
+                Log.e(user.UserName_,user.UserName+"delete success");
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 Intent stopintent=new Intent(this, Myserver.class);
+                this.finish();
                 stopService(stopintent);
                 return true;
             default:

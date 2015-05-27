@@ -5,7 +5,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="?android:attr/actionBarSize"
-    android:background="@drawable/background"
+    android:background="#ff545454"
     >
     <TextView
         android:id="@+id/name"

@@ -1,14 +1,14 @@
 package com.lfk.webim.server;
 
-import android.app.Notification;
-import android.app.PendingIntent;
-import android.app.Service;
-import android.content.Intent;
-import android.os.IBinder;
-import android.util.Log;
+        import android.app.Notification;
+        import android.app.PendingIntent;
+        import android.app.Service;
+        import android.content.Intent;
+        import android.os.IBinder;
+        import android.util.Log;
 
-import com.lfk.webim.R;
-import com.lfk.webim.friend;
+        import com.lfk.webim.R;
+        import com.lfk.webim.friend;
 
 /**
  * Created by Administrator on 2015/4/12.

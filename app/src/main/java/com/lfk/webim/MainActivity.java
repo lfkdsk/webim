@@ -32,6 +32,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public static CheckBox check_auto;
     private SharedPreferences sp;
     public static SharedPreferences.Editor editor;
+    //private SQLiteHelper sqLiteHelper;
+    //private SQLiteDatabase sqLiteDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

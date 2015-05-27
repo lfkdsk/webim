@@ -3,15 +3,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="?android:attr/actionBarSize"
-        android:background="@drawable/background"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:background="#ff545454"
         tools:context=".MainActivity">
         <ImageView
             android:id="@+id/image_reg"
-            android:src="@drawable/logo"
+            android:src="@drawable/s26908052"
             android:layout_centerHorizontal="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:background="@drawable/circle"
+            android:layout_width="256dp"
+            android:layout_height="128dp" />
         <TableLayout
+            android:paddingTop="16dp"
             android:layout_below="@id/image_reg"
             android:id="@+id/tablelayout_reg"
             android:layout_centerHorizontal="true"
