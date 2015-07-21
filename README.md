@@ -13,7 +13,10 @@
 ![first](https://github.com/lfkdsk/webim/blob/master/picture/desktop.png)
 
 
-教程地址：http://www.cnblogs.com/lfk-dsk/
+教程地址：
+
+http://www.cnblogs.com/lfk-dsk/
+
 往期传送门：
 　　1.http://www.cnblogs.com/lfk-dsk/p/4398943.html
 　　
