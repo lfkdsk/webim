@@ -17,19 +17,4 @@
 
 http://www.cnblogs.com/lfk-dsk/
 
-往期传送门：
 
-
-　　1.http://www.cnblogs.com/lfk-dsk/p/4398943.html
-　　
-　　2.http://www.cnblogs.com/lfk-dsk/p/4411625.html
-　　
-　　3.http://www.cnblogs.com/lfk-dsk/p/4412126.html
-　　
-　　4.http://www.cnblogs.com/lfk-dsk/p/4413693.html
-　　
-　　5.http://www.cnblogs.com/lfk-dsk/p/4419418.html
-　　
-　　6.http://www.cnblogs.com/lfk-dsk/p/4433319.html
-　　
-　　7.http://www.cnblogs.com/lfk-dsk/p/4532974.html
